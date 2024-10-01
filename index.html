@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Input and Output</title>
+    <script>
+        function updateOutput() {
+            const FCI = document.getElementById('FCI').value;
+            const PM = document.getElementById('PM').value;
+            const dropdown = document.getElementById('dropdown').value;
+            const output = "GCB_1_" + dropdown + "_" + FCI + "_" + PM + "_DFT_V1";
+            document.getElementById('output').value = output;
+        }
+    </script>
+</head>
+
+<body>
+    <h1>DFT  Input and Output</h1>
+    <form oninput="updateOutput()">
+        <label for="input">Enter FCI:</label>
+        <input type="text" id="FCI" name="FCI">
+        <br><br>
+        <label for="input">Enter PM:</label>
+        <textarea id="PM" name="PM" rows="1" cols="50"></textarea>
+
+        <!-- <input type="text" id="PM" name="PM"> -->
+        <br><br>
+        <label for="dropdown">Choose an option:</label>
+        <select id="dropdown" name="dropdown">
+            <option value="449586544">BTHD</option>
+            <option value="449586544">Loir</option>
+            <option value="253514491">Megalise</option>
+        </select>
+        <br><br>
+        <label for="output">Output:</label>
+        <output id="output" name="output"></output>
+    </form>
+</body>
+
+</html>
